@@ -1,0 +1,42 @@
+<ion-view title="Dashboard">
+    <ion-content class="has-header padding">
+        <h1>My Songs</h1>
+
+
+
+                <button ng-click="playAudioFile()" class="button button-stable">
+                    <i class="icon ion-play"> </i>
+
+                </button>
+                <button ng-click="stopAudioFile()" class="button button-stable">
+                    <i class="icon ion-stop">  </i>
+                </button>
+                <button ng-click="pauseAudioFile()" class="button button-stable">
+                    <i class="icon ion-pause"> </i>
+                </button>
+        <button ng-click="seekForward()" class="button button-stable">
+            <i class="icon ion-plus"> </i>
+        </button>
+        <div class="range">
+            <i class="icon ion-minus"></i>
+            <input ng-model='data.position' min="0" max="100"  type="range" name="position">
+            <i class="icon ion-plus"></i>
+            <p>
+                <span>
+
+                </span> {{ position }} <span> {{duration.minutes}} / {{duration.seconds}}  </span>
+            </p>
+        </div>
+        <div class="range">
+            <i class="icon ion-volume-low"></i>
+            <input ng-model='data.volume' min="0" max="100"  type="range" name="volume">
+            <i class="icon ion-volume-high"></i>
+            <p>
+                {{data.volume}}
+            </p>
+        </div>
+
+
+
+    </ion-content>
+</ion-view>
