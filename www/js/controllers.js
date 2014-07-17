@@ -1,6 +1,11 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope , $timeout , $rootScope) {
+    document.addEventListener("deviceready", function() {
+        navigator.splashscreen.hide();
+    }, false);
+
+
         $scope.data = { 'volume' : '100',
                         'position' : '0'};
 
@@ -11,8 +16,8 @@ angular.module('starter.controllers', [])
                 //console.log("DURATION ",$scope.media.getSongDuration());
                 //console.log("MEDIA" ,$scope.media);
                 //$scope.media.play();
-                var path  = "/Users/etayschur/Sites/GIT_SPACE/myApp/www/audio/tearDrop.mp3";
-                $rootScope.my_media = new Media(path);
+                var path  = "audio/tearDrop.mp3";
+                $rootScope.my_media = new Media("/android_asset/www/"+path);
                 $rootScope.my_media.play();
                 function getDorationTimer(){
                     $timeout(function() {
